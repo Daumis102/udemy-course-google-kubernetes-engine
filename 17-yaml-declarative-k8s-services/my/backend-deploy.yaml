@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  labels:
+    app: my-app-be
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app-be
+  template:
+    metadata:
+      labels:
+        name: backend-deployment-pod
+        app: my-app-be
+        tier: backend
+    spec:
+      containers:
+        - name: backend-deployment-container
+          image: stacksimplify/kube-helloworld:1.0.0
+          ports:
+            - containerPort: 8080
