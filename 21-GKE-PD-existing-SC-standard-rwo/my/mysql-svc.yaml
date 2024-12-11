@@ -4,7 +4,7 @@ metadata:
   name: mysql-svc
 spec:
   selector:
-    app: my-sql
+    app: mysql
   ports:
     - port: 3306
   clusterIP: None
